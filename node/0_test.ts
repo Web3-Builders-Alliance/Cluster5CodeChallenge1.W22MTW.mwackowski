@@ -71,19 +71,20 @@ describe("Cosmwasm Template Tests", () => {
         console.log(res);
     }).timeout(100000);
 
-    xit("Instantiate token3 cw20-base on testnet", async () => {
-        let code_id = 0;
-        let client = await setupClient(mnemonic);
-        let sender = await getAddress(mnemonic);
-        let res = await client.instantiate(sender, code_id, {}, "token3", "auto", {admin:sender});
-        console.log(res);
-    }).timeout(100000);
-
-    xit("Instantiate wasm-swap on testnet", async () => {
+    xit("Instantiate token1-token2 wasm-swap on testnet", async () => {
         let code_id = 0;
         let client = await setupClient(mnemonic);
         let sender = await getAddress(mnemonic);
         let res = await client.instantiate(sender, code_id, {}, "wasmswap", "auto", {admin:sender});
+        console.log(res);
+    }).timeout(100000);
+
+    xit("add token1-token2 liquidity to swap on testnet", async () => {
+        //using contract address mint a NFT on the testnet.
+        let contract_address = "";
+        let client = await setupClient(mnemonic);
+        let sender = await getAddress(mnemonic);
+        let res = await client.execute(sender, contract_address, {}, "auto");
         console.log(res);
     }).timeout(100000);
 
