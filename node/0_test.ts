@@ -25,6 +25,7 @@ const cw20_code_id = 0;
 
 const cw20_token1_address = "";
 const cw20_token2_address = "";
+const cw20_token3_address = "";
 const amm_token1_token2 = "";
 
 async function setupClient(mnemonic:string): Promise<SigningCosmWasmClient> {
